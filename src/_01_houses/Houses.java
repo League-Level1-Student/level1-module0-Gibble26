@@ -9,21 +9,25 @@ import org.jointheleague.graphical.robot.Robot;
 public class Houses {
 	
 	public void run() {
+		
     	Robot a = new Robot(); 
-		a.moveTo(800, 500);
+		a.moveTo(850, 500);
 		a.setSpeed(100);
-		a.turn(-90);
+		
 		a.penDown();
 		a.setPenColor(45, 110, 59);
-		a.move(35);
 		
 		a.setPenColor(Color.green);
-	
-	drawHouse(a);
-	
+		
 	a.setPenColor(45, 110, 59);
-	a.turn(90);
-	a.move(35);
+
+	
+	for (int i = 0; i < 11; i++) {
+		drawHouse(a);
+		
+	}
+
+	
 	
 	
 	
@@ -31,12 +35,21 @@ public class Houses {
 	
 	}
 	public void drawHouse(Robot gib) {
-		gib.turn(90);
-		gib.move(100);
+		gib.setPenColor(Color.green);
+		String height = JOptionPane.showInputDialog("What do you want the height of the houses to be?" );
+		int intHeight = Integer.parseInt(height);
+		gib.move(intHeight);
 		gib.turn(-90);
 		gib.move(45);
 		gib.turn(-90);
-		gib.move(100);
+		gib.move(intHeight);
+		gib.turn(90);
+		gib.setPenColor(45, 110, 59);
+
+		gib.move(35);
+
+		gib.setPenColor(Color.green);
+		gib.turn(90);
 	}
 	
 }
