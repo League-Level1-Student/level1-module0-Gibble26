@@ -18,8 +18,8 @@ public class Houses {
 		
 		
 		for (int i = 0; i < 11; i++) {
-			String height = JOptionPane.showInputDialog("What do you want the height of the houses to be?" );
-			int intHeight = Integer.parseInt(height);
+			
+			
 			if (intHeight <= 230) {
 				drawPointyHouse(a);
 			}
@@ -40,7 +40,7 @@ public class Houses {
 	
 	
 	}
-	public void drawFlatHouse(Robot gib) {
+	public void drawFlatHouse(Robot gib, int height) {
 		
 		
 		
