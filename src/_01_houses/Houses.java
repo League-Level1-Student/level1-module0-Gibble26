@@ -6,93 +6,38 @@ import javax.swing.JOptionPane;
 
 import org.jointheleague.graphical.robot.Robot;
 
-public class Houses {
-	
+public class Houses{
+
 	public void run() {
 		
-    	Robot a = new Robot(); 
-		a.moveTo(850, 500);
-		a.setSpeed(100);
-		
+		Robot a = new Robot();
+		a.setSpeed(50);
 		a.penDown();
-		
-		
+		a.moveTo(800,500);
+		a.turn(-90);
 		for (int i = 0; i < 11; i++) {
 			
-			
-			if (intHeight <= 230) {
-				drawPointyHouse(a);
-			}
-			else {
-				drawFlatHouse(a);
-			}
-			
+		
+		drawHouse(a, 20);
 		}
-	
-
-	
-	
-
-	
-	
-	
-	
-	
-	
 	}
-	public void drawFlatHouse(Robot gib, int height) {
+	public void drawHouse(Robot tim, int height) {
 		
 		
+		tim.setPenColor(0, 102, 0);
+		tim.move(20);
+		tim.turn(90);
+		tim.setPenColor(Color.green);
+		tim.move(height);
+		tim.turn(-90);
+		tim.move(35);
+		tim.turn(-90);
+		tim.move(height);
+		tim.turn(90);
+		tim.setPenColor(0, 102, 0);
+		tim.move(20);
 		
-		String color = JOptionPane.showInputDialog("What color do you want the houses to be? Red, Blue, or Pink?");
-		if (color.equalsIgnoreCase("Red")) {
-			gib.setPenColor(Color.red);
-		}
-		if (color.equalsIgnoreCase("Blue")) {
-			gib.setPenColor(Color.blue);
-		}
-		if (color.equalsIgnoreCase("Pink")) {
-			gib.setPenColor(Color.pink);
-		}
-
-		gib.move(intHeight);
-		gib.turn(-90);
-		gib.move(45);
-		gib.turn(-90);
-		gib.move(intHeight);
-		gib.turn(90);
-		
-
-		gib.move(35);
-
-		
-		gib.turn(90);
 	}
-	public void drawPointyHouse(Robot gib) {
-		
-		
-		String color = JOptionPane.showInputDialog("What color do you want the houses to be? Red, Blue, or Pink?");
-		if (color.equalsIgnoreCase("Red")) {
-			gib.setPenColor(Color.red);
-		}
-		if (color.equalsIgnoreCase("Blue")) {
-			gib.setPenColor(Color.blue);
-		}
-		if (color.equalsIgnoreCase("Pink")) {
-			gib.setPenColor(Color.pink);
-		}
-
-		gib.move(intHeight);
-		gib.turn(-45);
-			gib.move(45);
-		gib.turn(-90);
-		gib.move(45);
-		gib.turn(-45);
-		
-		gib.move(intHeight);
-
-		
-		gib.turn(90);
-	}
+	
 	
 }
