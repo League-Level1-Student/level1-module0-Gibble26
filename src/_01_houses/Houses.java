@@ -19,6 +19,7 @@ public class Houses{
 		String timHeight = JOptionPane.showInputDialog("How tall should this house be; Small, Medium, or Large?");
 		int timInt = Integer.parseInt(timHeight);
 		drawHouse(a, timInt);
+	
 		}
 	}
 	public void drawHouse(Robot tim, int timInt) {
@@ -39,5 +40,17 @@ public class Houses{
 		
 	}
 	
+	public void drawBuild(Robot tim, String timHeight) {
+		if (timHeight.equalsIgnoreCase("small")) {
+			drawHouse(tim, 60);
+		}
+			else if (timHeight.equalsIgnoreCase("medium")) {
+				drawHouse(tim, 120);
+			}
+				else if  (timHeight.equalsIgnoreCase("large")) {
+					drawHouse(tim, 250);
+		}
+		
+	}
 	
 }
