@@ -6,51 +6,48 @@ import javax.swing.JOptionPane;
 
 import org.jointheleague.graphical.robot.Robot;
 
-public class Houses{
+public class Houses {
 
 	public void run() {
-		
+
 		Robot a = new Robot();
 		a.setSpeed(50);
 		a.penDown();
-		a.moveTo(800,500);
+		a.moveTo(800, 500);
 		a.turn(-90);
 		for (int i = 0; i < 11; i++) {
-		String timHeight = JOptionPane.showInputDialog("How tall should this house be; Small, Medium, or Large?");
-		int timInt = Integer.parseInt(timHeight);
-		drawHouse(a, timInt);
-	
+			String timHeight = JOptionPane.showInputDialog("How tall should this house be; Small, Medium, or Large?");
+drawBuild(a, timHeight);
 		}
 	}
-	public void drawHouse(Robot tim, int timInt) {
-		
-		
+
+	public void drawHouse(Robot tim, int timTall) {
+
 		tim.setPenColor(0, 102, 0);
 		tim.move(20);
 		tim.turn(90);
 		tim.setPenColor(Color.green);
-		tim.move(timInt);
+		tim.move(timTall);
 		tim.turn(-90);
 		tim.move(35);
 		tim.turn(-90);
-		tim.move(timInt);
+		tim.move(timTall);
 		tim.turn(90);
 		tim.setPenColor(0, 102, 0);
 		tim.move(20);
-		
+
 	}
-	
+
 	public void drawBuild(Robot tim, String timHeight) {
+		timHeight = timHeight.trim();
 		if (timHeight.equalsIgnoreCase("small")) {
 			drawHouse(tim, 60);
+		} else if (timHeight.equalsIgnoreCase("medium")) {
+			drawHouse(tim, 120);
+		} else if (timHeight.equalsIgnoreCase("large")) {
+			drawHouse(tim, 250);
 		}
-			else if (timHeight.equalsIgnoreCase("medium")) {
-				drawHouse(tim, 120);
-			}
-				else if  (timHeight.equalsIgnoreCase("large")) {
-					drawHouse(tim, 250);
-		}
-		
+
 	}
-	
+
 }
