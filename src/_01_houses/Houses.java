@@ -39,13 +39,31 @@ public class Houses {
 		tim.move(20);
 
 	}
+	public void drawPoint(Robot tim, int timTall, String timColor) {
+
+		tim.setPenColor(0, 102, 0);
+		tim.move(20);
+		tim.turn(90);
+		chooseColor(tim, timColor);
+		tim.move(timTall);
+		tim.turn(-45);
+		tim.move(35);
+		tim.turn(-90);
+		tim.move(35);
+		tim.turn(-45);
+		tim.move(timTall);
+		tim.turn(90);
+		tim.setPenColor(0, 102, 0);
+		tim.move(20);
+
+	}
 
 	public void drawBuild(Robot tim, String timHeight, String timColor) {
 		timHeight = timHeight.trim();
 		if (timHeight.equalsIgnoreCase("small")) {
-			drawHouse(tim, 60, timColor);
+			drawPoint(tim, 60, timColor);
 		} else if (timHeight.equalsIgnoreCase("medium")) {
-			drawHouse(tim, 120, timColor);
+			drawPoint(tim, 120, timColor);
 		} else if (timHeight.equalsIgnoreCase("large")) {
 			drawHouse(tim, 250, timColor);
 		}
