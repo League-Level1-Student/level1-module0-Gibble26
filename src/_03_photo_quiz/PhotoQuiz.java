@@ -64,6 +64,18 @@ if(question2.equalsIgnoreCase("yes")) {
 if(question2.equalsIgnoreCase("no")) {
 	JOptionPane.showMessageDialog(null, "A fool thinks he is safe, but a wise man knows he is never safe. Good job.");
 }
+quizWindow.pack();
+String shongus = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGUp42PDpAwjJwpnsOIATaG_8uGJnUpnaohw&usqp=CAU";
+Component image3 = createImage(shongus);
+quizWindow.add(image3);
+quizWindow.pack();
+String question3 = JOptionPane.showInputDialog("Is this Gabriel, Yes or No?");
+if(question2.equalsIgnoreCase("Yes")) {
+JOptionPane.showMessageDialog(null, "You are smart, unlike Gabriel.");
+}	
+if(question2.equalsIgnoreCase("no")) {
+ JOptionPane.showMessageDialog(null, "You are very dumb. Do you see the ham hocks on this Sammy Hammy???!?!?!?");
+}
 	}
 
 	private Component createImage(String imageUrl) throws MalformedURLException {
