@@ -21,7 +21,7 @@ import javax.swing.JPanel;
 public class DrumKit implements MouseListener {
 
 	JLabel drumLabelWithImage;
-
+JLabel drumLabelWithImage2;
 	public void run() throws MalformedURLException {
 
 		// 1. Make a JFrame variable and initialize it using "new JFrame()"
@@ -54,17 +54,22 @@ bingus.setLayout(new GridLayout());
 bim.pack();
 
 		// 13. add this mouse listener to drumLabelWithImage
+
 drumLabelWithImage.addMouseListener(this);
 		// 18. Add more images to make a drumkit. Remember to add this mouse
 		// listener to each one.
-
+String image2 = "cymbal.jpg";
+drumLabelWithImage2 = createLabelImage(image2);
+drumLabelWithImage2.addMouseListener(this);
+bingus.add((drumLabelWithImage2));
+bingus.setLayout(new GridLayout());
+bim.pack();
 	}
 
 	public void mouseClicked(MouseEvent e) {
 		// 14. Print "mouse clicked" to the console. Run your program and watch
 		// the console to see when this is printed.
-		System.out.println("gingus");
-		JLabel drumClicked = (JLabel) e.getSource(); // This line gets the label
+		JLabel labelClicked = (JLabel) e.getSource(); // This line gets the label
 														// that the mouse
 														// clicked on
 
@@ -73,7 +78,12 @@ drumLabelWithImage.addMouseListener(this);
 		// leagueofamazing/code4life.
 
 		// 16. If they clicked on the drumImage...
-
+if(labelClicked == drumLabelWithImage) {
+	System.out.println("drum1");
+}
+if(labelClicked == drumLabelWithImage2) {
+	System.out.println("waaaaaaaa symbol");
+}
 		// 17. ...use the playSound method to play a drum sound. Test to see if
 		// it works
 
